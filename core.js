@@ -22,7 +22,7 @@ Ali.Client = Ali.util.inherit({
         Object.keys(requests).forEach(method => {
             let klass = requests[method];
             klass.constructor.prototype = this.reqBase;
-            that.services[method] = params => new klass(params);
+            that.services[method] = params => new klass(params).doRequest();
         });
     }
 });
