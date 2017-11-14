@@ -5,8 +5,4 @@
  */
 const Ali = require('./core');
 
-const client = Ali.client({
-    hello: 'world'
-});
-
-console.log(client);
+module.exports = Ali;
