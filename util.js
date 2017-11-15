@@ -72,6 +72,21 @@ Ali.util = {
         return obj;
     },
 
+    /**
+     * 将对象生成query string的形式
+     * @param params
+     * @returns {string}
+     */
+    generateQueryString: function generateQueryString (params = {}) {
+        let str = '';
+
+        Object.keys(params).forEach(key => {
+            str += `&${key}=${params[key]}`;
+        });
+
+        return str.slice(1);
+    },
+
     validate: new parameter().validate,
     crypto,
     moment,

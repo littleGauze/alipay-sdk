@@ -3,8 +3,8 @@
  * @fileoverview 请填写简要的文件说明.
  * @author gauze (Firstname Lastname)
  */
-const AlipaySystemOauthToken = require('./alipaySystemOauthToken');
+const alipaySystemOauthToken = require('./alipaySystemOauthToken');
 
 module.exports = {
-    AlipaySystemOauthToken
+    alipaySystemOauthToken
 };

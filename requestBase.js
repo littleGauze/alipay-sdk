@@ -8,12 +8,12 @@ const Ali = require('./core');
 
 module.exports = class RequestBase {
     constructor (config = {}) {
-        this.gateway = 'https://openapi.alipaydev.com/gateway.do';
+        this.gateway = config.gateway || 'https://openapi.alipay.com/gateway.do';
         this.commonParams = {
-            app_id: config.alipay.appId,
+            app_id: config.appId,
             format: 'JSON',
             charset: 'utf-8',
-            sing_type: config.signType ||'RSA2',
+            sign_type: config.signType || 'RSA2',
             version: '1.0'
         };
         this.crypto = Ali.util.crypto(config);
@@ -38,7 +38,7 @@ module.exports = class RequestBase {
         params = Ali.util.sort(paramsObj);
 
         //格式化为querystring
-        params = querystring.stringify(params);
+        params = Ali.util.generateQueryString(params);
 
         //签名
         let sign = this.crypto.sign(params);
@@ -48,7 +48,6 @@ module.exports = class RequestBase {
     }
 
     doRequest () {
-        debugger;
         let params = this.getBizContent();
 
         if (!this.method || this.method === 'GET') {
@@ -60,7 +59,6 @@ module.exports = class RequestBase {
                 url: `${this.gateway}?${params}`
             });
         } else if (this.method === 'POST') {
-            console.log(JSON.stringify(params));
             return Ali.util.http.request({
                 url: this.gateway,
                 method: 'POST',

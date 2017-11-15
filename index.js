@@ -5,4 +5,4 @@
  */
 const Ali = require('./core');
 
-module.exports = Ali;
+module.exports = Ali.Client;

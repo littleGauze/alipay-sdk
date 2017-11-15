@@ -15,6 +15,8 @@ Ali.Client = Ali.util.inherit({
         this.reqBase = new RequestBase(config);
         this.services = {};
         this.initServices();
+
+        return this.services;
     },
 
     initServices () {

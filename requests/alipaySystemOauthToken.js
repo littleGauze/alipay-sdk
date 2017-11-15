@@ -7,7 +7,7 @@ const Ali = require('../core');
 
 module.exports = class AlipaySystemOauthToken {
     constructor (params) {
-        this.method = 'POST';
+        this.method = 'GET';
         this._method = 'alipay.system.oauth.token';
         const rules = {
             grant_type: 'string',
