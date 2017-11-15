@@ -10,7 +10,7 @@ module.exports = class RequestBase {
     constructor (config = {}) {
         this.gateway = 'https://openapi.alipaydev.com/gateway.do';
         this.commonParams = {
-            app_id: config.appId,
+            app_id: config.alipay.appId,
             format: 'JSON',
             charset: 'utf-8',
             sing_type: config.signType ||'RSA2',
