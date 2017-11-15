@@ -5,6 +5,7 @@
  */
 const Ali = require('./core');
 const crypto = require('./cryptoUtil');
+const http = require('./http');
 const moment = require('moment');
 const parameter = require('parameter');
 
@@ -73,7 +74,8 @@ Ali.util = {
 
     validate: new parameter().validate,
     crypto,
-    moment
+    moment,
+    http
 };
 
 module.exports = Ali.util;

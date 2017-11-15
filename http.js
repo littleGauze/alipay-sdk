@@ -4,13 +4,11 @@
  * @author gauze (Firstname Lastname)
  */
 const request = require('request-promise');
-const Ali = requrie('./core');
-
 const handleErr = (err) => {
     console.log(err);
 };
 
-Ali.http = {
+module.exports = {
     request (options = {}) {
         return request(options).catch(handleErr);
     },

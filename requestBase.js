@@ -8,7 +8,7 @@ const Ali = require('./core');
 
 module.exports = class RequestBase {
     constructor (config = {}) {
-        this.gateway = 'https://openapi.alipay.com/gateway.do';
+        this.gateway = 'https://openapi.alipaydev.com/gateway.do';
         this.commonParams = {
             app_id: config.appId,
             format: 'JSON',
@@ -16,7 +16,7 @@ module.exports = class RequestBase {
             sing_type: config.signType ||'RSA2',
             version: '1.0'
         };
-        this.crypto = Ali.util.crypto(config.alipay);
+        this.crypto = Ali.util.crypto(config);
     }
 
     getRequestParams () {
@@ -48,6 +48,7 @@ module.exports = class RequestBase {
     }
 
     doRequest () {
+        debugger;
         let params = this.getBizContent();
 
         if (!this.method || this.method === 'GET') {
@@ -55,13 +56,16 @@ module.exports = class RequestBase {
 
             return Ali.util.http.request({
                 method: 'GET',
+                json : true,
                 url: `${this.gateway}?${params}`
             });
         } else if (this.method === 'POST') {
+            console.log(JSON.stringify(params));
             return Ali.util.http.request({
                 url: this.gateway,
                 method: 'POST',
-                data: params
+                json : true,
+                body: params
             });
         }
     }

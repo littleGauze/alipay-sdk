@@ -9,7 +9,7 @@ module.exports = config => {
     const {
         privateKey,
         aliPublicKey,
-        algorithm = 'SHA256WithRSA'
+        algorithm = 'RSA-SHA256'
         } = config;
 
     return {
