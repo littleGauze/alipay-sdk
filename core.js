@@ -8,7 +8,7 @@ module.exports = Ali;
 require('./util');
 
 const RequestBase = require('./requestBase');
-const requests = require('./request');
+const requests = require('./requests');
 
 Ali.Client = Ali.util.inherit({
     constructor: function Client(config) {

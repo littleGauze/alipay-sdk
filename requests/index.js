@@ -3,10 +3,12 @@
  * @fileoverview 请填写简要的文件说明.
  * @author gauze (Firstname Lastname)
  */
-const alipaySystemOauthToken = require('./alipaySystemOauthToken');
-const alipayUserInfoShare = require('./alipayUserInfoShare');
+const alipaySystemOauthToken = require('./api/alipaySystemOauthToken');
+const alipayUserInfoShare = require('./api/alipayUserInfoShare');
+const ssdataDataserviceRiskRainscoreQuery = require('./api/ssdataDataserviceRiskRainscoreQuery');
 
 module.exports = {
     alipaySystemOauthToken,
-    alipayUserInfoShare
+    alipayUserInfoShare,
+    ssdataDataserviceRiskRainscoreQuery
 };
