@@ -2,7 +2,7 @@
 ----
 
 ### 安装
-`npm install ali-node-sdk`
+`npm install ali-node-sdk --save`
 
 ### 使用
 ```js
@@ -29,6 +29,7 @@ client.alipaySystemOauthToken({
 ### 支持接口
 - `alipay.system.oauth.token`
 - `alipay.user.info.share`
+- `ssdata.dataservice.risk.rainscore.query`
 
 ### 增加接口
 1. 在 `./requests` 目录下增加以接口名命名的request文件
