@@ -8,7 +8,10 @@ const Ali = require('./core');
 
 module.exports = class RequestBase {
     constructor (config = {}) {
-        this.gateway = config.gateway || 'https://openapi.alipay.com/gateway.do';
+        this.gateway = 'https://openapi.alipay.com/gateway.do';
+        if (config.sandbox) {
+            this.gateway = 'https://openapi.alipaydev.com/gateway.do'
+        }
         this.commonParams = {
             app_id: config.appId,
             format: 'JSON',

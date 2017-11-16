@@ -4,7 +4,9 @@
  * @author gauze (Firstname Lastname)
  */
 const alipaySystemOauthToken = require('./alipaySystemOauthToken');
+const alipayUserInfoShare = require('./alipayUserInfoShare');
 
 module.exports = {
-    alipaySystemOauthToken
+    alipaySystemOauthToken,
+    alipayUserInfoShare
 };
