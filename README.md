@@ -40,7 +40,7 @@ client.alipaySystemOauthToken({
     - 方法名同支付宝method（使用驼峰命名） 如： `alipay.system.oauth.token` => `client.alipaySystemOauthToken`
 
     #### 示例
-    > `./requests/alipaySystemOauthToken.js`
+    > `./requests/api/alipaySystemOauthToken.js`
     ```js
     /**
      * Created on 2017/11/14.
